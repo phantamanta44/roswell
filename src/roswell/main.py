@@ -6,6 +6,7 @@ from .adapter import resolve_type
 
 PARAM_PATTERN = r'^((?:\w+\s*:\s*\w+(?:\s*,\s*\w+\s*:\s*\w+)*|\(\)))' \
                 r'(?:\s*->\s*(\w+\s*:\s*\w+(?:\s*,\s*\w+\s*:\s*\w+)*))?$'
+                .replace(r'\w', '[\w_/]')
 
 
 def spin(name, argstring, executor, anon=False, freq=50):
